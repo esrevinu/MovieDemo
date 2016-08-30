@@ -1,0 +1,25 @@
+{
+  "name": "MovieDemo",
+  "description": "Simple movie demo",
+  "main": "",
+  "authors": [
+    "Li Zhenyu <icytornado@163.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "movie",
+    "nodejs"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
