@@ -35,18 +35,36 @@ module.exports=function(grunt){
             }
         },
 
+        mochaTest: {
+            options: {
+                reporter: 'spec'
+            },
+            src: ['test/**/*.js']
+        },
         concurrent: {
-            tasks: ['nodemon', 'watch'],
+            tasks: ['nodemon', 'watch','jshint'],
             options: {
                 logConcurrentOutput: true
             }
+        },
+
+        //Don't work
+        jshint: {
+            options: {
+                // jshintrc: '.jshintrc',
+                ignores: ['public/libs/**/*.js']
+            },
+            all: ['public/js/*.js','test/**/*.js','app/**/*.js']
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-concurrent');
+    grunt.loadNpmTasks('grunt-mocha-test');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     grunt.option('force',true);
     grunt.registerTask('default',['concurrent']);
+    grunt.registerTask('test',['mochaTest']);
 }
