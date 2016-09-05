@@ -1,5 +1,6 @@
 var Movie = require('../models/movie');
 var Category = require('../models/category');
+var settings = require('../../config/settings');
 //index page
 exports.index= function(req,res){
     console.log("FIRST");
@@ -27,7 +28,7 @@ exports.search = function(req,res) {
     var catId = req.query.cat;
     var q = req.query.q;
     var page = parseInt(req.query.p,10) || 0;
-    var pageSize = 2;
+    var pageSize = settings.pageSize;
     var index = page * pageSize;
     if(catId){
         Category

@@ -10,9 +10,10 @@ var mongoose = require('mongoose');
 var mongoStore = require('connect-mongo')(session);
 var logger = require('morgan');
 var fs = require('fs');
+var settings = require('./config/settings');
 
 var app = express();
-var dbUrl = 'mongodb://localhost/moviedemo';
+var dbUrl = settings.dbUrl;
 
 mongoose.connect(dbUrl);
 // models loading
