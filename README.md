@@ -1,17 +1,43 @@
 
 # MovieDemo
 
-## nodejs+express+jade+mongodb+redis
+MovieDemo uses **nodejs+express+jade+mongodb+redis** to build a web application to manage and display the movie information 
 
-###功能
+##Installation
 
-####用户模块
-####电影模块
-####后台管理模块
-####评论模块
+ - install node dependency
+```
+npm install
+```
+ - install bower dependency
+```
+bower install
+```
+ - install [mongodb](https://www.mongodb.com/download-center#community)
 
-###特点
-- 设置session保存登录用户状态并持久化到mongodb
-- 评论模块有回复评论功能
-- 使用grunt实现热部署利于开发
-- 密码使用md5和salt处理后存储
+
+##Basic Functions
+
+####User Module
+ - Sign up
+ - Sign in
+ - Access control
+####Movie Module
+ - Display information
+ - Tag management
+ - Search by name 
+####Admin Module
+ - Manage movie information(CRUD)
+ - Add new movie using douban API
+####Comment Module
+ - Comment to movie
+ - Comment to other comments
+ - Display comments by layers
+##Features
+####2016.8
+- Save user's status by session and persist in mongodb
+- Comment to other's comments
+- Use grunt to build all project including hot-loader
+- Introduce salt to the encryption
+####2016.9
+- Add unit test using mocha
