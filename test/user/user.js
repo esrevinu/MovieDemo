@@ -52,8 +52,6 @@ describe('<Unit Test',function(){
             _user.save(function(err){
                 should.not.exist(err);
                 _user.password.should.not.have.length(0);
-                console.log("++++++++++"+password);//原密码
-                console.log("++++++++++"+_user.password);//hash后的密码
                 bcrypt.compare(password,_user.password,function(err,isMatch){
                     should.not.exist(err);
                     isMatch.should.equal(true);
@@ -61,16 +59,6 @@ describe('<Unit Test',function(){
                         should.not.exist(err);
                         done();
                     });
-                });
-            });
-        });
-
-        it('should password be hashed correctly',function(done){
-            var _user = new User(user);
-            _user.save(function(err){
-                _user.role.should.equal(0);
-                _user.remove(function(err){
-                    done();
                 });
             });
         });
